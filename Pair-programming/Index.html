@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario personal</title>
+</head>
+<body>
+    <h1>Formulario personal:</h1>
+    <form>
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" id="nombre" placeholder="Ingrese su apellido">
+        <label for="telefono">Teléfono:</label>
+        <input type="number" name="telefono" id="telefono" placeholder="Ingrese su teléfono">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" name="email" id="email" placeholder="Ingrese su email">
+        <label for="fechanac">Fecha de nacimiento:</label>
+        <input type="date" name="fechanac" id="fechanac">
+        <label for="dni">Documento:</label>
+        <input type="dni" name="dni" id="dni" placeholder="Ingrese su documento">
+
+        <label for="pais">Seleccione país de origen:</label>
+        <select name="pais" id="pais">
+            <option value="Argentina">Argentina</option>
+            <option value="Chile">Chile</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Paraguay">Paraguay</option>
+        </select>
+        
+        <div class="gender-checkbox">
+            <p>Seleccione genero:</p>
+            <label for="masculino">Masculino</label>
+            <input type="radio" value="m" name="genero">
+            <label for="femenino">Femenino</label>
+            <input type="radio" value="f" name="genero">
+        </div>
+
+
+    </form>
+</body>
+</html>
