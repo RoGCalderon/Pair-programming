@@ -1,0 +1,224 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/*Aplico grid al container principal*/
+.container{
+    width: 100%;
+    min-height: 100vh; /*alto minimo*/
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 230px auto;
+    grid-template-rows: 60px auto;
+    grid-template-areas: "header header"
+                         "sidebar main";
+    transition: all .3s ease;
+
+}
+
+.container .active{
+    grid-template-columns: minmax(300px 18%);
+}
+
+.yt-logo{
+    width: 110px;
+    padding-top: 5px;
+}
+
+.icon{
+    border: none;
+    background-color: transparent;
+}
+
+/* Parte del header*/
+.header{
+    grid-area: header;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto ;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 20px;
+    grid-template-areas: "youtube search botones";
+   
+}
+
+.youtube{
+    grid-area: youtube;
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+    border: none;
+    padding: 10px;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+.search{
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search input{
+    min-width: 60%;
+    border: 1px solid #c2c1be;
+    height: 38px;
+    line-height: 35px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.btn-search{
+    border: 1px solid #c2c1be;
+    border-left: none;
+    height: 38px;
+    width: 45px;
+    cursor: pointer;
+}
+
+.btn-microphone{
+    border-radius: 50%;
+    border: none;
+    color:#c2c1be;
+    height: 38px;
+    width: 38px;
+    margin-left: 10px;
+}
+.btn-header{
+    grid-area: botones;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.btn-icon{
+    margin: 8px;
+    border: none;
+    height: 38px;
+    width: 38px;
+    background: none;
+}
+
+.icon{
+    width:20px;
+}
+
+.btn-user{
+    margin: 8px;
+    border: none;
+    border-radius: 50%;
+    background-color: #2da3e3;
+    width: 40px;
+    height: 40px;
+}
+
+
+.sidebar{
+    grid-area:sidebar; 
+    overflow: hidden;
+
+}
+.sidebar a{
+    display: block;
+    padding: 15px 35px;
+    color: black;
+    min-width: 800px;
+
+}
+.sidebar a:hover{
+    background: #c2c1be ;
+    font-weight: bold;
+}
+
+.icon{
+    margin-right: 20px;
+}
+
+/* Main con el grid de videos*/
+.main{
+    grid-area: main;
+    padding: 35px;
+    background-color: #f7f7f7;
+    
+}
+.main .grid-videos{
+    display: grid;
+    grid-gap: 40px 20px;
+    grid-template-columns: repeat(4, 1fr); 
+
+}
+
+.card:hover{
+    /*   background-color: red; /* cambio de violeta a rojo */ 
+       transform: scale(1.2); /* escala hacia afuera cuadro*/
+       box-shadow:  -5px 5px 10px grey; /* agrega sombra al rededor de card*/
+       cursor: pointer; /* se transforma en manito*/
+   
+   }
+
+/*Meida querys*/
+@media screen and (max-width: 1200px){
+    .main .grid-videos{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .container{
+        width: 100%;
+        min-height: 100vh; /*alto minimo*/
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 75px auto;
+        grid-template-rows: 60px auto;
+        grid-template-areas: "header header"
+                             "sidebar main";
+        transition: all .3s ease;
+    
+    }
+
+}
+
+@media screen and (max-width: 900px){
+    .main .grid-videos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .youtube-logo{
+        display:none;
+    }
+
+}
+
+@media screen and (max-width: 400px){
+    .main .grid-videos{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contenedor{
+        grid-template-rows: auto;
+    }
+    .header{
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        grid-template-areas: "youtube search" 
+    }
+    .botones-header{
+        display: none;
+    }
+
+}
+

@@ -1,0 +1,154 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/*Aplico grid al container principal*/
+.container{
+    width: 100%;
+    min-height: 100vh; /*alto minimo*/
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 90px auto;
+    grid-template-rows: 60px auto;
+    grid-template-areas: "header header"
+                         "sidebar main";
+    transition: all .3s ease;
+
+}
+
+.container .active{
+    grid-template-columns: 300px auto;
+}
+
+.yt-logo{
+    width: 110px;
+}
+
+.icon{
+    border: none;
+    background-color: transparent;
+}
+
+/* Parte del header*/
+.header{
+    grid-area: header;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto ;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 20px;
+    grid-template-areas: "youtube search botones";
+   
+}
+
+.youtube{
+    grid-area: youtube;
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+    border: none;
+    padding: 10px;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+.search{
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search input{
+    min-width: 60%;
+    border: 1px solid #c2c1be;
+    height: 38px;
+    line-height: 35px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.btn-search{
+    border: 1px solid #c2c1be;
+    border-left: none;
+    height: 38px;
+    width: 45px;
+    cursor: pointer;
+}
+
+.btn-microphone{
+    border-radius: 50%;
+    border: none;
+    color:#c2c1be;
+    height: 38px;
+    width: 38px;
+    margin-left: 10px;
+}
+.btn-header{
+    grid-area: botones;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.btn-icon{
+    margin: 8px;
+    border: none;
+    height: 38px;
+    width: 38px;
+    background: none;
+}
+
+.icon{
+    width:20px;
+}
+
+.btn-user{
+    margin: 8px;
+    border: none;
+    border-radius: 50%;
+    background-color: #2da3e3;
+    width: 40px;
+    height: 40px;
+}
+
+
+.sidebar{
+    grid-area:sidebar; 
+    overflow: hidden;
+
+}
+.sidebar a{
+    display: block;
+    padding: 15px 35px;
+    color: black;
+    min-width: 800px;
+
+}
+.sidebar a:hover{
+    background: #c2c1be ;
+    font-weight: bold;
+}
+
+
+.main{
+    grid-area: main;
+    background-color: blue;
+}
