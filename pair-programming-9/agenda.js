@@ -1,4 +1,6 @@
 //valores que tomo de los input
+
+
 //botones
 let btnAgregar = document.getElementById("btn-agregar");
 let btnEliminar = document.getElementById("btn-eliminar");
@@ -21,34 +23,32 @@ class Persona {
 }
 // Funciones:
 
-//Función para agregar contacto: 
-
-
+//Evento para el botón agregar
 btnAgregar.addEventListener("click",()=>{
     let nombres = document.getElementById("nombre").value;
-    let apellidos = document.getElementById("apellido").value;
-    let documentos = document.getElementById("documento").value;
-    let telefonos = document.getElementById("telefono").value;
+let apellidos = document.getElementById("apellido").value;
+let documentos = document.getElementById("documento").value;
+let telefonos = document.getElementById("telefono").value;
     let nuevo = new Persona (nombres,apellidos,documentos,telefonos);
     agenda.push(nuevo);
     datos();
     console.log()
 }  )
 
-
-let modificarContacto = (documento) =>{
-    let contactoExistente = agenda.find(element => element.documento === documento);
-
-}
-
+//Insertar los datos en la tabla 
 function datos(){
 
 var v = "";
 agenda.forEach( (nuevo,index )=>{
  
-    v += '<tr><td>'+ nuevo.nombre+'</td><td>'+ nuevo.apellido+'</td><td>'+nuevo.documento+'</td><td>'+nuevo.telefono+'</td></tr>'
+  v += '<tr><td>'+ nuevo.nombre+'</td><td>'+ nuevo.apellido+'</td><td>'+nuevo.documento+'</td><td>'+nuevo.telefono+'</td><td>'+'<button class="button" id="edit" > Editar</button>'+'</td><td>'+'<button class="button" id="delete"> Eliminar</button>'+'</td></tr>'
 
 } )
 
-  document.getElementById("tabla").innerHTML = v; 
+    document.getElementById("t-body").innerHTML = v; 
+}
+ 
+//Función para editar los datos
+function editarDatos(td){
+
 }
